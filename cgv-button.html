@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGV - Button</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .button_popup{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .button_popup button{
+            width: 500px;
+            height: 88px;
+            font-size: 1.5rem;
+        }
+        .modal-body {
+            height: calc(100vh - 156px);
+            overflow-y: scroll;
+            max-height: 90%;
+        }
+        /* .modal-content{
+            height: 100vh;
+        } */
+        
+        .modal-footer{
+            justify-content: space-around!important;
+        }
+
+        form{
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        #btn_apres, #alert_cgv{
+            display: none;
+
+        }
+        #btn_avant{
+            opacity: .8;
+        }
+
+        #alert_cgv{
+            position: fixed;
+            justify-content: center;
+            text-align: center;
+            left: 10px;
+            right: 25px;
+        }
+        
+        
+        .check-center{
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .check-center label{
+            font-size: large;
+        }
+
+        label {
+        cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+        appearance: none;
+        width: 1.5em;
+        height: 1.5em;
+        position: relative;
+        margin: 0 0.5em 0 0;
+        cursor: pointer;
+        }
+
+        input[type="checkbox"]:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: #ddd;
+        color: #fff;
+        text-align: center;
+        line-height: 1.5;
+        border-radius: 0.4em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        }
+
+        input[type="checkbox"]:checked:before {
+        content: '\2714';
+        background: #07da23;
+        }
+
+        input[type="checkbox"]:after {
+        content: '';
+        width: 300%;
+        height: 300%;
+        background-color: #4df163;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 5;
+        opacity: 0;
+        transform: translate( -50%, -50% );
+        animation: none;
+        }
+
+        input[type="checkbox"]:checked:after {
+        animation: check 0.3s;
+        }
+
+        @keyframes check {
+            0% { 
+            transform: translate( -50%, -50% ) scale( 0.1 ); 
+            opacity: 1;
+            }
+            40% { 
+            opacity: 1; }
+            100% { 
+            transform: translate( -50%, -50% ) scale( 1 ); 
+            opacity: 0;
+            }
+        }
+        .cgv_merci_modal .modal-body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cgv_merci_modal .modal-body p{
+            font-size: 2rem;
+            color: #0e8acf;
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="button_popup">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
+            les conditions générales de ventes
+        </button>
+    </div>
+    
+    
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">les conditions générales de ventes</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                        <div id="alert_cgv" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Merci de cocher la case J'ai lu et j'accepte les conditions générales de ventes.</strong> 
+                            <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"> -->
+                            <!-- <span aria-hidden="true">&times;</span> -->
+                            </button>
+                        </div>
+
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic quam officiis expedita nesciunt, inventore perspiciatis. Ipsam tempora sequi ex beatae! Quidem sit ab libero similique inventore ratione corrupti omnis iste.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, molestiae, deserunt a aspernatur eos sequi in, veritatis laboriosam nulla reprehenderit non quae ut. Pariatur quidem, iste numquam quod sed voluptatibus.
+                    Iure, aliquid voluptas. Quasi, provident. Amet vero inventore, qui blanditiis labore adipisci? Nostrum aut cumque maxime ducimus odio nihil nobis labore ipsa quas. Aliquid at saepe iste nihil et ipsa?
+                    Fugiat cum recusandae amet quisquam dolores adipisci debitis quam quia, quidem assumenda sed fugit doloribus velit error quos voluptatem modi repudiandae atque, incidunt dolorum rerum? Ipsam quo ducimus repudiandae aliquid.
+                    Ut impedit magnam repellendus, asperiores distinctio hic fugiat delectus ab neque atque maiores itaque, obcaecati, ex commodi? Facere praesentium doloremque, vitae veritatis molestiae officiis ex nulla ipsam ullam voluptatum provident.
+                    Aliquam quia aliquid perspiciatis facere, delectus quis ab similique qui rem provident unde numquam officia explicabo vero error nulla mollitia minus? Doloribus eius dolore fugit illum officiis iure incidunt alias?
+                    Iste, omnis. Temporibus non vero eius unde. Magni dolores omnis atque quaerat, suscipit velit quam aliquid. Possimus architecto aspernatur delectus, nam cumque earum. Vero, cupiditate deserunt quos necessitatibus et ratione.
+                    Laboriosam exercitationem repudiandae eaque odit, id incidunt non in culpa delectus necessitatibus quaerat at dolorem, vitae magni, nam veniam dolorum alias commodi cum quod sunt illum. Quae facilis assumenda voluptatem.
+                    Nam voluptas quod accusantium temporibus id hic sed sapiente nobis, unde earum reprehenderit est a ipsam consequatur odio aperiam et atque quis maiores? Hic fuga error, non voluptatibus magnam enim!
+                    Corrupti asperiores, assumenda, aliquid voluptatibus delectus debitis modi maxime eum nihil perspiciatis cumque dignissimos placeat culpa consectetur quasi? Numquam quis nobis quibusdam aspernatur aliquid, eveniet repellat repellendus rem animi! Cupiditate.
+                    Natus exercitationem quasi laborum laboriosam molestiae molestias perferendis saepe, nesciunt sit amet deleniti laudantium, vero adipisci debitis repudiandae, expedita ut porro iure quis voluptatibus quisquam earum. Voluptate minus odit ipsum.
+                    Itaque aperiam vitae esse, non quos incidunt saepe sequi quis accusamus. Sunt veniam minus qui eveniet perferendis obcaecati quia eligendi quod consequuntur. Quaerat dolorem quas voluptatum earum sunt. Magni, ea.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic quam officiis expedita nesciunt, inventore perspiciatis. Ipsam tempora sequi ex beatae! Quidem sit ab libero similique inventore ratione corrupti omnis iste.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, molestiae, deserunt a aspernatur eos sequi in, veritatis laboriosam nulla reprehenderit non quae ut. Pariatur quidem, iste numquam quod sed voluptatibus.
+                    Iure, aliquid voluptas. Quasi, provident. Amet vero inventore, qui blanditiis labore adipisci? Nostrum aut cumque maxime ducimus odio nihil nobis labore ipsa quas. Aliquid at saepe iste nihil et ipsa?
+                    Fugiat cum recusandae amet quisquam dolores adipisci debitis quam quia, quidem assumenda sed fugit doloribus velit error quos voluptatem modi repudiandae atque, incidunt dolorum rerum? Ipsam quo ducimus repudiandae aliquid.
+                    Ut impedit magnam repellendus, asperiores distinctio hic fugiat delectus ab neque atque maiores itaque, obcaecati, ex commodi? Facere praesentium doloremque, vitae veritatis molestiae officiis ex nulla ipsam ullam voluptatum provident.
+                    Aliquam quia aliquid perspiciatis facere, delectus quis ab similique qui rem provident unde numquam officia explicabo vero error nulla mollitia minus? Doloribus eius dolore fugit illum officiis iure incidunt alias?
+                    Iste, omnis. Temporibus non vero eius unde. Magni dolores omnis atque quaerat, suscipit velit quam aliquid. Possimus architecto aspernatur delectus, nam cumque earum. Vero, cupiditate deserunt quos necessitatibus et ratione.
+                    Laboriosam exercitationem repudiandae eaque odit, id incidunt non in culpa delectus necessitatibus quaerat at dolorem, vitae magni, nam veniam dolorum alias commodi cum quod sunt illum. Quae facilis assumenda voluptatem.
+                    Nam voluptas quod accusantium temporibus id hic sed sapiente nobis, unde earum reprehenderit est a ipsam consequatur odio aperiam et atque quis maiores? Hic fuga error, non voluptatibus magnam enim!
+                    Corrupti asperiores, assumenda, aliquid voluptatibus delectus debitis modi maxime eum nihil perspiciatis cumque dignissimos placeat culpa consectetur quasi? Numquam quis nobis quibusdam aspernatur aliquid, eveniet repellat repellendus rem animi! Cupiditate.
+                    Natus exercitationem quasi laborum laboriosam molestiae molestias perferendis saepe, nesciunt sit amet deleniti laudantium, vero adipisci debitis repudiandae, expedita ut porro iure quis voluptatibus quisquam earum. Voluptate minus odit ipsum.
+                    Itaque aperiam vitae esse, non quos incidunt saepe sequi quis accusamus. Sunt veniam minus qui eveniet perferendis obcaecati quia eligendi quod consequuntur. Quaerat dolorem quas voluptatum earum sunt. Magni, ea.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic quam officiis expedita nesciunt, inventore perspiciatis. Ipsam tempora sequi ex beatae! Quidem sit ab libero similique inventore ratione corrupti omnis iste.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, molestiae, deserunt a aspernatur eos sequi in, veritatis laboriosam nulla reprehenderit non quae ut. Pariatur quidem, iste numquam quod sed voluptatibus.
+                    Iure, aliquid voluptas. Quasi, provident. Amet vero inventore, qui blanditiis labore adipisci? Nostrum aut cumque maxime ducimus odio nihil nobis labore ipsa quas. Aliquid at saepe iste nihil et ipsa?
+                    Fugiat cum recusandae amet quisquam dolores adipisci debitis quam quia, quidem assumenda sed fugit doloribus velit error quos voluptatem modi repudiandae atque, incidunt dolorum rerum? Ipsam quo ducimus repudiandae aliquid.
+                    Ut impedit magnam repellendus, asperiores distinctio hic fugiat delectus ab neque atque maiores itaque, obcaecati, ex commodi? Facere praesentium doloremque, vitae veritatis molestiae officiis ex nulla ipsam ullam voluptatum provident.
+                    Aliquam quia aliquid perspiciatis facere, delectus quis ab similique qui rem provident unde numquam officia explicabo vero error nulla mollitia minus? Doloribus eius dolore fugit illum officiis iure incidunt alias?
+                    Iste, omnis. Temporibus non vero eius unde. Magni dolores omnis atque quaerat, suscipit velit quam aliquid. Possimus architecto aspernatur delectus, nam cumque earum. Vero, cupiditate deserunt quos necessitatibus et ratione.
+                    Laboriosam exercitationem repudiandae eaque odit, id incidunt non in culpa delectus necessitatibus quaerat at dolorem, vitae magni, nam veniam dolorum alias commodi cum quod sunt illum. Quae facilis assumenda voluptatem.
+                    Nam voluptas quod accusantium temporibus id hic sed sapiente nobis, unde earum reprehenderit est a ipsam consequatur odio aperiam et atque quis maiores? Hic fuga error, non voluptatibus magnam enim!
+                    Corrupti asperiores, assumenda, aliquid voluptatibus delectus debitis modi maxime eum nihil perspiciatis cumque dignissimos placeat culpa consectetur quasi? Numquam quis nobis quibusdam aspernatur aliquid, eveniet repellat repellendus rem animi! Cupiditate.
+                    Natus exercitationem quasi laborum laboriosam molestiae molestias perferendis saepe, nesciunt sit amet deleniti laudantium, vero adipisci debitis repudiandae, expedita ut porro iure quis voluptatibus quisquam earum. Voluptate minus odit ipsum.
+                    Itaque aperiam vitae esse, non quos incidunt saepe sequi quis accusamus. Sunt veniam minus qui eveniet perferendis obcaecati quia eligendi quod consequuntur. Quaerat dolorem quas voluptatum earum sunt. Magni, ea.
+                </div>
+                <div class="checkbox_cgv">
+                    <form>
+                        
+                        <div class="check-center">
+                            <input id="checkcgv" type="checkbox" value="false" onclick="valider_cgv();" name="checkcgv" />
+                            <label for="checkcgv" >J'ai lu et j'accepte les conditions générales de ventes</label>
+                        </div>
+                        <!-- <div id="opacity-4" class="envoyer_cgv">
+                            <a id="button2">Envoyer</a>
+                        </div>
+                        <div class="envoyer_cgv">
+                            <a href="#" id="valider_cgv" class="button">Envoyer</a>
+                        </div> -->
+
+                        
+                    </form>
+                </div>
+            </div>
+
+            
+            <div id="btn_avant" class="modal-footer">
+                <button onclick="btn_avant();" type="button" class="btn btn-primary">Accepter</button>
+            </div>
+
+            <div id="btn_apres"  class="modal-footer">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".cgv_merci_modal" data-dismiss="modal" aria-label="Close">Accepter</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="cgv_merci_modal modal fade bd-example-modal-lg" id="cgv_merci" tabindex="-1" role="dialog" aria-labelledby="cgv_merciLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="cgv_merciLabel">Merci ! </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="cgv_merci">
+                    <p>Merci pour votre confiance !</p>
+                </div>
+            
+            </div>
+
+            
+            
+        </div>
+        </div>
+    </div>
+    
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        
+        function valider_cgv()
+        {
+            if(document.getElementById('checkcgv').checked==false)
+            {
+                document.getElementById('btn_apres').style.display = 'none';
+                document.getElementById('btn_avant').style.display = 'flex';
+           
+            }else
+            {
+                document.getElementById('btn_apres').style.display = 'flex';
+                document.getElementById('btn_avant').style.display = 'none';
+                document.getElementById('alert_cgv').style.display = 'none';
+            }
+        }
+
+        $("#btn_avant").click(function() {
+            $('.modal-body').animate({
+                scrollTop: $(".checkbox_cgv").offset().top},
+                // 'slow');
+                2000);
+        });
+
+        function btn_avant()
+        {
+            if(document.getElementById('checkcgv').checked==false)
+            {
+                document.getElementById('alert_cgv').style.display = 'flex';           
+            }
+        }
+       
+    </script>
+</body>
+</html>
